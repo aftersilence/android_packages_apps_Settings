@@ -82,6 +82,7 @@ final class LocalBluetoothProfileManager {
     private final HidProfile mHidProfile;
     private OppProfile mOppProfile;
     private final PanProfile mPanProfile;
+    private final PbapServerProfile mPbapProfile;
 
     /**
      * Mapping from profile name, e.g. "HEADSET" to profile object.
@@ -117,6 +118,10 @@ final class LocalBluetoothProfileManager {
         mPanProfile = new PanProfile(context);
         addPanProfile(mPanProfile, PanProfile.NAME,
                 BluetoothPan.ACTION_CONNECTION_STATE_CHANGED);
+
+       //Create PBAP server profile, but do not add it to list of profiles
+       // as we do not need to monitor the profile as part of profile list
+        mPbapProfile = new PbapServerProfile(context);
 
         Log.d(TAG, "LocalBluetoothProfileManager construction complete");
     }
@@ -290,6 +295,10 @@ final class LocalBluetoothProfileManager {
 
     HeadsetProfile getHeadsetProfile() {
         return mHeadsetProfile;
+    }
+
+    PbapServerProfile getPbapProfile(){
+        return mPbapProfile;
     }
 
      /**
