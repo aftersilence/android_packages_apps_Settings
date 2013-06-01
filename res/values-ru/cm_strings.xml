@@ -866,4 +866,36 @@
     <!-- Sound settings, power notifications label for ringtone == none -->
     <string name="power_notifications_ringtone_silent">Без звука</string>
 
+    <!-- Navigation bar background style -->
+    <string name="nav_bar_transparency_title">Прозрачность строки навигации</string>
+    <string name="nav_bar_color_title">Цвет строки навигации</string>
+    <string name="nav_bar_background_style">Фон строки навигации</string>
+    <string name="nav_bar_alpha_mode_dialog_text_title">Показать прозрачность строк навигации и состояния</string>
+    <string name="nav_bar_alpha_mode_text_title">Режим прозрачности</string>
+    <string name="nav_bar_alpha_mode_home">На рабочем столе</string>
+    <string name="nav_bar_alpha_mode_default">На рабочем столе и экране блокировки</string>
+    <string name="nav_bar_alpha_mode_always">Всегда</string>
+    <string name="nav_bar_style_reset">Сбросить</string>
+
+    <!-- Status bar background style -->
+    <string name="status_bar_transparency_title">Прозрачность строки состояния</string>
+    <string name="status_bar_color_title">Цвет строки состояния</string>
+    <string name="status_bar_background_style">Фон строки состояния</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Показывать прозрачность строк навигации и состояния</string>
+    <string name="status_bar_alpha_mode_text_title">Режим прозрачности</string>
+    <string name="status_bar_alpha_mode_home">На рабочем столе</string>
+    <string name="status_bar_alpha_mode_default">На рабочем столе и экране блокировки</string>
+    <string name="status_bar_alpha_mode_always">Всегда</string>
+    <string name="status_bar_style_reset">Восстановить исходное</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Выбор цвета</string>
+    <string name="press_color_to_apply">Нажмите на цвет внизу, чтобы применить его</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Задать</string>
+    <string name="color_default">По умолчанию</string>
+
 </resources>
