@@ -89,7 +89,9 @@
             android:id="@+id/enter"
             android:text="@string/set"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_set"
+            android:background="@android:color/transparent" />
 
         <Button
             android:id="@+id/ics_color"
