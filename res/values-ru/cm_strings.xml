@@ -924,8 +924,9 @@
     <string name="color_default">По умолчанию</string>
 
     <!-- HALO #PA -->
-    <string name="halo_settings_title">Настройки Halo</string>
+    <string name="halo_settings_title">Halo</string>
     <string name="halo_settings_summary"></string>
+    <string name="halo_settings_sub_title">Настройки Halo</string>
     <string name="halo_hide_title">Авто-скрытие</string>
     <string name="halo_hide_summary">Halo будет автоматически скрываться при клике вне его области</string>
     <string name="halo_reversed_title">Инверсия жестов</string>
@@ -937,15 +938,15 @@
     <string name="halo_custom_app_title">Пользовательские приложения</string>
     <string name="halo_custom_app_summary">Быстрый доступ к приложениям из Halo</string>
     <string name="halo_pause_title">Пауза активного приложения</string>
-    <string name="halo_pause_summary">Когда открыто мультиокно, основное приложение приостанавливается</string>
+    <string name="halo_pause_summary">Когда Halo открыт, основное приложение приостанавливается</string>
     <string name="halo_enabled_title">Включить</string>
     <string name="halo_enabled_summary">Включение функции Halo</string>
     <string name="halo_active_title">Показать</string>
-    <string name="halo_active_summary">Всегда отображать мультиокно</string>   
+    <string name="halo_active_summary">Всегда отображать Halo</string>   
     <string name="halo_hide_button_title">Скрыть кнопку</string>
-    <string name="halo_hide_button_summary">Скрыть кнопку активации Halo</string> 
+    <string name="halo_hide_button_summary">Скрыть кнопку активации Halo на панели уведомления</string> 
     <string name="halo_colors_title">Свой цвет</string>
-    <string name="halo_colors_summary">Включить свои цвета для элементов мультиокна</string>
+    <string name="halo_colors_summary">Включить свои цвета для элементов Halo</string>
     <string name="halo_circle_color_title">Цвет круга</string>
     <string name="halo_bubble_color_title">Цвет фона сообщения</string>
     <string name="halo_bubble_text_color_title">Цвет текста сообщения</string>
