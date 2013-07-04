@@ -891,6 +891,71 @@
     <!-- Sound settings, charging sounds label for ringtone == none -->
     <string name="power_notifications_ringtone_silent">Без звука</string>
 
+    <!-- Navigation bar background style -->
+    <string name="nav_bar_transparency_title">Прозрачность строки навигации</string>
+    <string name="nav_bar_color_title">Цвет строки навигации</string>
+    <string name="nav_bar_background_style">Фон строки навигации</string>
+    <string name="nav_bar_alpha_mode_dialog_text_title">Показать прозрачность строк навигации и состояния</string>
+    <string name="nav_bar_alpha_mode_text_title">Режим прозрачности</string>
+    <string name="nav_bar_alpha_mode_home">На рабочем столе</string>
+    <string name="nav_bar_alpha_mode_default">На рабочем столе и экране блокировки</string>
+    <string name="nav_bar_alpha_mode_always">Всегда</string>
+    <string name="nav_bar_style_reset">Сбросить</string>
+
+    <!-- Status bar background style -->
+    <string name="status_bar_transparency_title">Прозрачность строки состояния</string>
+    <string name="status_bar_color_title">Цвет строки состояния</string>
+    <string name="status_bar_background_style">Фон строки состояния</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Показывать прозрачность строк навигации и состояния</string>
+    <string name="status_bar_alpha_mode_text_title">Режим прозрачности</string>
+    <string name="status_bar_alpha_mode_home">На рабочем столе</string>
+    <string name="status_bar_alpha_mode_default">На рабочем столе и экране блокировки</string>
+    <string name="status_bar_alpha_mode_always">Всегда</string>
+    <string name="status_bar_style_reset">Восстановить исходное</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Выбор цвета</string>
+    <string name="press_color_to_apply">Нажмите на цвет внизу, чтобы применить его</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Задать</string>
+    <string name="color_default">По умолчанию</string>
+
+    <!-- HALO #PA -->
+    <string name="halo_settings_title">Настройки Halo</string>
+    <string name="halo_settings_summary"></string>
+    <string name="halo_hide_title">Авто-скрытие</string>
+    <string name="halo_hide_summary">Halo будет автоматически скрываться при клике вне его области</string>
+    <string name="halo_reversed_title">Инверсия жестов</string>
+    <string name="halo_reversed_summary">Используйте двойной клик для выбора задачи или приложения</string>
+    <string name="halo_state_title">Политика работы</string>
+    <string name="halo_state_summary">Выбор черного/белого списка приложений</string>
+    <string name="halo_state_black">Черный список</string>
+    <string name="halo_state_white">Белый список</string>
+    <string name="halo_custom_app_title">Пользовательские приложения</string>
+    <string name="halo_custom_app_summary">Быстрый доступ к приложениям из Halo</string>
+    <string name="halo_pause_title">Пауза активного приложения</string>
+    <string name="halo_pause_summary">Когда открыто мультиокно, основное приложение приостанавливается</string>
+    <string name="halo_enabled_title">Включить</string>
+    <string name="halo_enabled_summary">Включение функции Halo</string>
+    <string name="halo_active_title">Показать</string>
+    <string name="halo_active_summary">Всегда отображать мультиокно</string>   
+    <string name="halo_hide_button_title">Скрыть кнопку</string>
+    <string name="halo_hide_button_summary">Скрыть кнопку активации Halo</string> 
+    <string name="halo_colors_title">Свой цвет</string>
+    <string name="halo_colors_summary">Включить свои цвета для элементов мультиокна</string>
+    <string name="halo_circle_color_title">Цвет круга</string>
+    <string name="halo_bubble_color_title">Цвет фона сообщения</string>
+    <string name="halo_bubble_text_color_title">Цвет текста сообщения</string>
+    <string name="halo_effect_color_title">Цвет эффекта</string>
+    <string name="halo_effect_color_summary"></string>
+    <string name="halo_general_title">Основные</string>
+    <string name="halo_interface_title">Интерфейс</string>
+    <string name="halo_color_ui_title">Цвета</string>
+    <string name="halo_misc_title">Разное</string>
+
     <!-- Display Screen-on and off Electron beam animations -->
     <string name="screen_off_animation_title">Анимация выкл. экрана</string>
     <string name="screen_off_animation_summary">Показывать анимацию выключения экрана</string>
@@ -901,5 +966,4 @@
     <string name="privacy_guard_dlg_text">Когда включен режим инкогнито, приложение не имеет доступа к персональным данным, таким как контакты, сообщения или журнал вызовов.</string>
     <string name="privacy_guard_default_title">Режим инкогнито</string>
     <string name="privacy_guard_default_summary">Включить режим инкогнито по умолчанию для устанавливаемых приложений</string>
-
 </resources>
