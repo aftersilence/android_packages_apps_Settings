@@ -23,8 +23,7 @@ import android.content.IntentFilter;
 import android.provider.Settings;
 import android.util.Slog;
 import android.widget.CompoundButton;
-import android.widget.Switch;
-import com.android.settings.util.Helpers; 
+import android.widget.Switch; 
 
 import java.util.List;
 
@@ -71,10 +70,6 @@ public class HaloEnabler implements CompoundButton.OnCheckedChangeListener {
         // Handle a switch change
         Settings.System.putInt(mContext.getContentResolver(),
                 Settings.System.HALO_ENABLED, isChecked ? 1 : 0);
-		Settings.System.putInt(mContext.getContentResolver(),
-                Settings.System.HALO_ACTIVE, isChecked ? 1 : 0);
-				
-        Helpers.restartSystemUI();
     }
 
 }

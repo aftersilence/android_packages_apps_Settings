@@ -43,7 +43,6 @@ import android.provider.Settings.SettingNotFoundException;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.util.Helpers;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class Halo extends SettingsPreferenceFragment
@@ -53,7 +52,6 @@ public class Halo extends SettingsPreferenceFragment
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
     private static final String KEY_HALO_PAUSE = "halo_pause";
-    private static final String KEY_HALO_ACTIVE = "halo_active";
     private static final String KEY_HALO_HIDE_BUTTON = "halo_hide_button";
     private static final String PREF_HALO_COLORS = "halo_colors";
     private static final String PREF_HALO_CIRCLE_COLOR = "halo_circle_color";
@@ -61,8 +59,6 @@ public class Halo extends SettingsPreferenceFragment
     private static final String PREF_HALO_BUBBLE_COLOR = "halo_bubble_color";
     private static final String PREF_HALO_BUBBLE_TEXT_COLOR = "halo_bubble_text_color";
 
-
-    private CheckBoxPreference mHaloActive;
     private ListPreference mHaloState;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
@@ -86,11 +82,6 @@ public class Halo extends SettingsPreferenceFragment
 
         mNotificationManager = INotificationManager.Stub.asInterface(
                 ServiceManager.getService(Context.NOTIFICATION_SERVICE));
-
-
-        mHaloActive = (CheckBoxPreference) findPreference(KEY_HALO_ACTIVE);
-        mHaloActive.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                 Settings.System.HALO_ACTIVE, 0) == 1);
 
         mHaloHideButton = (CheckBoxPreference) findPreference( KEY_HALO_HIDE_BUTTON);
         mHaloHideButton.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -152,10 +143,6 @@ public class Halo extends SettingsPreferenceFragment
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_PAUSE, mHaloPause.isChecked()
                     ? 1 : 0);
-        } else if  (preference == mHaloActive) {
-             Settings.System.putInt(mContext.getContentResolver(),
-                   Settings.System.HALO_ACTIVE, mHaloActive.isChecked()
-                    ? 1 : 0);
         } else if  (preference == mHaloHideButton) {
              Settings.System.putInt(mContext.getContentResolver(),
                    Settings.System.HALO_HIDE_BUTTON, mHaloHideButton.isChecked()
@@ -164,7 +151,6 @@ public class Halo extends SettingsPreferenceFragment
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_COLORS, mHaloColors.isChecked()
                     ? 1 : 0);
-            Helpers.restartSystemUI();
         }	
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -193,7 +179,6 @@ public class Halo extends SettingsPreferenceFragment
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.HALO_EFFECT_COLOR, intHex);
-            Helpers.restartSystemUI();
             return true;
         } else if (preference == mHaloBubbleColor) {
             String hex = ColorPickerPreference.convertToARGB(

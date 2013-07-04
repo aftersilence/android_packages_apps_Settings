@@ -18,22 +18,10 @@
     android:title="@string/halo_settings_sub_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceCategory
-        android:title="@string/halo_general_title">
-
-     <CheckBoxPreference
-            android:key="halo_active"
-            android:title="@string/halo_active_title"
-            android:summary="@string/halo_active_summary"
-     />
-
-     </PreferenceCategory>
-     
      <CheckBoxPreference
             android:key="halo_hide_button"
             android:title="@string/halo_hide_button_title"
-            android:summary="@string/halo_hide_button_summary"
-            android:dependency="halo_active" />
+            android:summary="@string/halo_hide_button_summary" />
 
      <PreferenceCategory
         android:title="@string/halo_interface_title">
@@ -43,28 +31,24 @@
          android:title="@string/halo_state_title"
          android:summary="@string/halo_state_summary"
          android:entries="@array/entries_halo_state"
-         android:entryValues="@array/values_halo_state"
-         android:dependency="halo_active" />
+         android:entryValues="@array/values_halo_state" />
 
      <CheckBoxPreference
          android:key="halo_hide"
          android:title="@string/halo_hide_title"
          android:summary="@string/halo_hide_summary"
-         android:defaultValue="false"
-         android:dependency="halo_active" />
+         android:defaultValue="false" />
 
      <CheckBoxPreference
          android:key="halo_reversed"
          android:title="@string/halo_reversed_title"
          android:summary="@string/halo_reversed_summary"
-         android:defaultValue="true"
-         android:dependency="halo_active" />
+         android:defaultValue="true" />
 
      <CheckBoxPreference
             android:key="halo_pause"
             android:title="@string/halo_pause_title"
-            android:summary="@string/halo_pause_summary"
-            android:dependency="halo_active" />
+            android:summary="@string/halo_pause_summary" />
 
      
      </PreferenceCategory>
@@ -76,7 +60,6 @@
             android:key="halo_colors"
             android:title="@string/halo_colors_title"
             android:summary="@string/halo_colors_summary"
-            android:dependency="halo_active"
             android:defaultValue="false" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
