@@ -943,8 +943,6 @@
     <string name="halo_enabled_summary">Включение функции Halo</string>
     <string name="halo_active_title">Показать</string>
     <string name="halo_active_summary">Всегда отображать Halo</string>   
-    <string name="halo_hide_button_title">Скрыть кнопку</string>
-    <string name="halo_hide_button_summary">Скрыть кнопку активации Halo на панели уведомления</string> 
     <string name="halo_colors_title">Свой цвет</string>
     <string name="halo_colors_summary">Включить свои цвета для элементов Halo</string>
     <string name="halo_circle_color_title">Цвет круга</string>

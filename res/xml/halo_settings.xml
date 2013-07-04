@@ -18,11 +18,6 @@
     android:title="@string/halo_settings_sub_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-     <CheckBoxPreference
-            android:key="halo_hide_button"
-            android:title="@string/halo_hide_button_title"
-            android:summary="@string/halo_hide_button_summary" />
-
      <PreferenceCategory
         android:title="@string/halo_interface_title">
      <ListPreference
@@ -49,7 +44,6 @@
             android:key="halo_pause"
             android:title="@string/halo_pause_title"
             android:summary="@string/halo_pause_summary" />
-
      
      </PreferenceCategory>
 

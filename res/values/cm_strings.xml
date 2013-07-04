@@ -1032,9 +1032,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_enabled_title">Enable Halo</string>
     <string name="halo_enabled_summary">If checked enable Halo feature</string>   
     <string name="halo_active_title">Show</string>
-    <string name="halo_active_summary">Always show Halo window</string>   
-    <string name="halo_hide_button_title">Hide button</string>
-    <string name="halo_hide_button_summary">Always hide notification Halo button</string> 
+    <string name="halo_active_summary">Always show Halo window</string>    
     <string name="halo_colors_title">Custom colors</string>
     <string name="halo_colors_summary">Enable custom colors for Halo instead of the default theme colors</string>
     <string name="halo_circle_color_title">Circle color</string>
