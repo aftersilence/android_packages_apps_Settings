@@ -1016,8 +1016,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- HALO #PA -->
     <string name="halo_settings_title">Halo</string>
-    <string name="halo_settings_sub_title">Halo Settings</string>
-    <string name="halo_settings_summary">Configure Halo options</string>
     <string name="halo_hide_title">Hide Halo after activity</string>
     <string name="halo_hide_summary">Halo will appear for incoming tasks and scroll out of sight after a while</string>
     <string name="halo_reversed_title">Reverse Halo gestures</string>
@@ -1030,21 +1028,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_custom_app_summary">Quick access to the applications of the Halo</string>
     <string name="halo_pause_title">Halo pause active app</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused</string>
-    <string name="halo_enabled_title">Enable Halo</string>
-    <string name="halo_enabled_summary">If checked enable Halo feature</string>   
-    <string name="halo_active_title">Show</string>
-    <string name="halo_active_summary">Always show Halo window</string>    
-    <string name="halo_colors_title">Custom colors</string>
-    <string name="halo_colors_summary">Enable custom colors for Halo instead of the default theme colors</string>
-    <string name="halo_circle_color_title">Circle color</string>
-    <string name="halo_bubble_color_title">Speech bubble color</string>
-    <string name="halo_bubble_text_color_title">Speech bubble text color</string>
-    <string name="halo_effect_color_title">Effect color</string>
-    <string name="halo_effect_color_summary">Requires a systemui restart</string>
-    <string name="halo_general_title">General</string>
-    <string name="halo_interface_title">Interface</string>
-    <string name="halo_color_ui_title">Colors</string>
-    <string name="halo_misc_title">Misc</string>
 
     <!-- Privacy Guard -->
     <string name="privacy_guard_switch_label">Enable Privacy Guard</string>
