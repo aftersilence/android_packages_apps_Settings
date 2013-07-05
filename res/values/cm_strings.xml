@@ -743,6 +743,7 @@
     <string name="title_tile_quiet_hours">Quiet hours</string>
     <string name="title_tile_volume">Volume</string>
     <string name="title_tile_expanded_desktop">Expanded desktop</string>
+    <string name="title_tile_halo">Halo</string>
 
     <string name="title_dynamic_tiles">Dynamic tiles</string>
     <string name="dynamic_tiles_note_title">Note</string>
@@ -1014,7 +1015,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="app_halo_label_white">Whitelist from HALO</string>
 
     <!-- HALO #PA -->
-    <string name="halo_settings_title">Halo Settings</string>
+    <string name="halo_settings_title">Halo</string>
+    <string name="halo_settings_sub_title">Halo Settings</string>
     <string name="halo_settings_summary">Configure Halo options</string>
     <string name="halo_hide_title">Hide Halo after activity</string>
     <string name="halo_hide_summary">Halo will appear for incoming tasks and scroll out of sight after a while</string>

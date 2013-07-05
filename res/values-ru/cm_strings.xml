@@ -925,6 +925,7 @@
 
     <!-- HALO #PA -->
     <string name="halo_settings_title">Halo</string>
+    <string name="halo_settings_sub_title">Настройки Halo</string>
     <string name="halo_settings_summary"></string>
     <string name="halo_settings_sub_title">Настройки Halo</string>
     <string name="halo_hide_title">Авто-скрытие</string>
