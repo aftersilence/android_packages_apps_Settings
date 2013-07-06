@@ -63,6 +63,7 @@
     <uses-permission android:name="android.permission.CONFIGURE_WIFI_DISPLAY" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SET_TIME" />
+    <uses-permission android:name="android.permission.CHANGE_PRIVACY_GUARD_STATE" />
 
     <permission
         android:name="android.permission.REQUEST_SUPERUSER"
@@ -94,6 +95,12 @@
             android:uiOptions="splitActionBarWhenNarrow"
             android:hardwareAccelerated="true"
             android:supportsRtl="true">
+
+        <receiver android:name=".cyanogenmod.LockscreenInterface$DeviceAdminLockscreenReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_lockscreen" />
+        </receiver>
 
         <!-- Only system/su can open this activity -->
         <!-- This activity will then call the MultitaskSuRequestActivity to create a new task stack -->
@@ -1614,6 +1621,8 @@
 
         <activity android:name=".profiles.ProfileGroupConfig" />
 
+        <activity android:name=".profiles.WifiTriggers" />
+
         <activity android:name=".profiles.NFCProfileWriter" />
 
         <activity android:name=".profiles.NFCProfileSelect" />
@@ -1683,6 +1692,24 @@
                 android:value="com.android.settings.DataUsageSummary" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/wireless_settings" />
+        </activity>
+
+        <!-- HALO #PA-->
+        <activity android:name=".halo.Halo" />
+        <activity android:name="Settings$HaloSettingsActivity"
+                android:label="@string/halo_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.SHORTCUT" />
+                </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.halo.Halo" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/halo_settings" />
         </activity>
 
         <activity android:name="Settings$DreamSettingsActivity"
