@@ -962,7 +962,7 @@
     <string name="privacy_guard_switch_label">Включить режим инкогнито</string>
     <string name="privacy_guard_dlg_title">Включить режим инкогнито?</string>
     <string name="privacy_guard_dlg_text">Когда включен режим инкогнито, приложение не имеет доступа к персональным данным, таким как контакты, сообщения или журнал вызовов.</string>
-    <string name="privacy_guard_dlg_system_app_text">Системные приложения в режиме инкогнито не смогут получать доступ к персональным данным. Это может вызвать нестабильную работу других приложений.</string>
+    <string name="privacy_guard_dlg_system_app_text">Системные приложения в режиме инкогнито не смогут получать или предоставлять доступ к персональным данным. Это может вызвать нестабильную работу других приложений.</string>
     <string name="privacy_guard_default_title">Режим инкогнито</string>
     <string name="privacy_guard_default_summary">Включить режим инкогнито по умолчанию для устанавливаемых приложений</string>
     <string name="privacy_guard_manager_title">Менеджер режима инкогнито</string>
