@@ -89,7 +89,7 @@ public class Halo extends SettingsPreferenceFragment
         mHaloReversed.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_REVERSED, 1) == 1);
 
-        mHaloSize = (ListPreference) prefSet.findPreference(KEY_HALO_SIZE);
+        mHaloSize = (ListPreference) findPreference(KEY_HALO_SIZE);
         try {
             float haloSize = Settings.System.getFloat(mContext.getContentResolver(),
                     Settings.System.HALO_SIZE, 1.0f);
@@ -129,7 +129,7 @@ public class Halo extends SettingsPreferenceFragment
 
     public boolean onPreferenceChange(Preference preference, Object Value) {
         if (preference == mHaloSize) {
-            float haloSize = Float.valueOf((String) newValue);
+            float haloSize = Float.valueOf((String) Value);
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.HALO_SIZE, haloSize);
             return true;
