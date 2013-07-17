@@ -51,11 +51,13 @@ public class Halo extends SettingsPreferenceFragment
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
     private static final String KEY_HALO_PAUSE = "halo_pause";
+    private static final String KEY_HALO_SIZE = "halo_size";
 
     private ListPreference mHaloState;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
     private CheckBoxPreference mHaloPause;
+    private ListPreference mHaloSize;
 
     private Context mContext;
     private INotificationManager mNotificationManager; 
@@ -86,7 +88,17 @@ public class Halo extends SettingsPreferenceFragment
         mHaloReversed = (CheckBoxPreference) findPreference(KEY_HALO_REVERSED);
         mHaloReversed.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_REVERSED, 1) == 1);
+
+        mHaloSize = (ListPreference) prefSet.findPreference(KEY_HALO_SIZE);
+        try {
+            float haloSize = Settings.System.getFloat(mContext.getContentResolver(),
+                    Settings.System.HALO_SIZE, 1.0f);
+            mHaloSize.setValue(String.valueOf(haloSize));  
+        } catch(Exception ex) {
+            // So what
         }
+        mHaloSize.setOnPreferenceChangeListener(this);
+    }
 
     private boolean isHaloPolicyBlack() {
         try {
@@ -116,7 +128,12 @@ public class Halo extends SettingsPreferenceFragment
     }
 
     public boolean onPreferenceChange(Preference preference, Object Value) {
-        if (preference == mHaloState) {
+        if (preference == mHaloSize) {
+            float haloSize = Float.valueOf((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.HALO_SIZE, haloSize);
+            return true;
+        } else if (preference == mHaloState) {
             boolean state = Integer.valueOf((String) Value) == 1;
             try {
                 mNotificationManager.setHaloPolicyBlack(state);

@@ -957,6 +957,15 @@
     <string name="halo_pause_title">Пауза активного приложения</string>
     <string name="halo_pause_summary">Когда Halo открыт, основное приложение приостанавливается</string>
 
+    <string name="halo_size_title">Размер Halo</string>
+    <string name="halo_size_summary">Задать размер Halo</string>
+    <string name="halo_size_miniscule">Очень маленький</string>
+    <string name="halo_size_small">Маленький</string>
+    <string name="halo_size_default">Стандартный</string>
+    <string name="halo_size_large">Большой</string>
+    <string name="halo_size_gigantic">Очень большой</string>
+    <string name="halo_size_monster">Гигантский</string>
+
     <!-- Display Screen-on and off Electron beam animations -->
     <string name="screen_off_animation_title">Анимация выкл. экрана</string>
     <string name="screen_off_animation_summary">Показывать анимацию выключения экрана</string>
