@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2011 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,11 @@
 
 package com.android.settings.bluetooth;
 
-import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothInputDevice;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
-import android.util.Log;
 
 import com.android.settings.R;
 
@@ -32,15 +30,8 @@ import java.util.List;
  * HidProfile handles Bluetooth HID profile.
  */
 final class HidProfile implements LocalBluetoothProfile {
-    private static final String TAG = "HidProfile";
-    private static boolean V = true;
-
     private BluetoothInputDevice mService;
-    private boolean mIsProfileReady;
-
-    private final LocalBluetoothAdapter mLocalAdapter;
-    private final CachedBluetoothDeviceManager mDeviceManager;
-    private final LocalBluetoothProfileManager mProfileManager;
+    private boolean mProfileReady;
 
     static final String NAME = "HID";
 
@@ -52,40 +43,17 @@ final class HidProfile implements LocalBluetoothProfile {
             implements BluetoothProfile.ServiceListener {
 
         public void onServiceConnected(int profile, BluetoothProfile proxy) {
-            if (V) Log.d(TAG,"Bluetooth service connected");
             mService = (BluetoothInputDevice) proxy;
-            // We just bound to the service, so refresh the UI for any connected HID devices.
-            List<BluetoothDevice> deviceList = mService.getConnectedDevices();
-            while (!deviceList.isEmpty()) {
-                BluetoothDevice nextDevice = deviceList.remove(0);
-                CachedBluetoothDevice device = mDeviceManager.findDevice(nextDevice);
-                // we may add a new device here, but generally this should not happen
-                if (device == null) {
-                    Log.w(TAG, "HidProfile found new device: " + nextDevice);
-                    device = mDeviceManager.addDevice(mLocalAdapter, mProfileManager, nextDevice);
-                }
-                device.onProfileStateChanged(HidProfile.this, BluetoothProfile.STATE_CONNECTED);
-                device.refresh();
-            }
-            mIsProfileReady=true;
+            mProfileReady = true;
         }
 
         public void onServiceDisconnected(int profile) {
-            if (V) Log.d(TAG,"Bluetooth service disconnected");
-            mIsProfileReady=false;
+            mProfileReady = false;
+            mService = null;
         }
     }
 
-    public boolean isProfileReady() {
-        return mIsProfileReady;
-    }
-
-    HidProfile(Context context, LocalBluetoothAdapter adapter,
-        CachedBluetoothDeviceManager deviceManager,
-        LocalBluetoothProfileManager profileManager) {
-        mLocalAdapter = adapter;
-        mDeviceManager = deviceManager;
-        mProfileManager = profileManager;
+    HidProfile(Context context, LocalBluetoothAdapter adapter) {
         adapter.getProfileProxy(context, new InputDeviceServiceListener(),
                 BluetoothProfile.INPUT_DEVICE);
     }
@@ -99,19 +67,14 @@ final class HidProfile implements LocalBluetoothProfile {
     }
 
     public boolean connect(BluetoothDevice device) {
-        if (mService == null) return false;
         return mService.connect(device);
     }
 
     public boolean disconnect(BluetoothDevice device) {
-        if (mService == null) return false;
         return mService.disconnect(device);
     }
 
     public int getConnectionStatus(BluetoothDevice device) {
-        if (mService == null) {
-            return BluetoothProfile.STATE_DISCONNECTED;
-        }
         List<BluetoothDevice> deviceList = mService.getConnectedDevices();
 
         return !deviceList.isEmpty() && deviceList.get(0).equals(device)
@@ -120,17 +83,14 @@ final class HidProfile implements LocalBluetoothProfile {
     }
 
     public boolean isPreferred(BluetoothDevice device) {
-        if (mService == null) return false;
         return mService.getPriority(device) > BluetoothProfile.PRIORITY_OFF;
     }
 
     public int getPreferred(BluetoothDevice device) {
-        if (mService == null) return BluetoothProfile.PRIORITY_OFF;
         return mService.getPriority(device);
     }
 
     public void setPreferred(BluetoothDevice device, boolean preferred) {
-        if (mService == null) return;
         if (preferred) {
             if (mService.getPriority(device) < BluetoothProfile.PRIORITY_ON) {
                 mService.setPriority(device, BluetoothProfile.PRIORITY_ON);
@@ -138,6 +98,10 @@ final class HidProfile implements LocalBluetoothProfile {
         } else {
             mService.setPriority(device, BluetoothProfile.PRIORITY_OFF);
         }
+    }
+
+    public boolean isProfileReady() {
+        return mProfileReady;
     }
 
     public String toString() {
@@ -154,7 +118,7 @@ final class HidProfile implements LocalBluetoothProfile {
     }
 
     public int getSummaryResourceForDevice(BluetoothDevice device) {
-        int state = getConnectionStatus(device);
+        int state = mService.getConnectionState(device);
         switch (state) {
             case BluetoothProfile.STATE_DISCONNECTED:
                 return R.string.bluetooth_hid_profile_summary_use_for;
@@ -183,19 +147,6 @@ final class HidProfile implements LocalBluetoothProfile {
                 return R.drawable.ic_bt_pointing_hid;
             default:
                 return R.drawable.ic_bt_misc_hid;
-        }
-    }
-
-    protected void finalize() {
-        if (V) Log.d(TAG, "finalize()");
-        if (mService != null) {
-            try {
-                BluetoothAdapter.getDefaultAdapter().closeProfileProxy(BluetoothProfile.INPUT_DEVICE,
-                                                                       mService);
-                mService = null;
-            }catch (Throwable t) {
-                Log.w(TAG, "Error cleaning up HID proxy", t);
-            }
         }
     }
 }
